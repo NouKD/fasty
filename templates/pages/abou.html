@@ -1,0 +1,85 @@
+{% extends 'bases/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    About
+{% endblock title %}
+
+{% block content %}
+        
+        
+        <!--============= PAGE-COVER =============-->
+        <section class="page-cover" id="cover-about-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                    	<h1 class="page-title">About Us</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="{% static 'about' %}">Home</a></li>
+                            <li class="active">About Us</li>
+                        </ul>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end page-cover -->
+        
+        
+        <!--===== INNERPAGE-WRAPPER ====-->
+        <section class="innerpage-wrapper">
+        	<div id="about-us">
+
+                <div id="about-content" class="section-padding"> 
+                    <div class="container">
+                        <div class="row">
+                        	<div class="col-sm-12">
+                                <div class="flex-content">
+                                
+                                    <div class="flex-content-img about-img">
+                                        <img src="{{ presentation.image.url }}" class="img-responsive" alt="about-img" />
+                                    </div><!-- end about-img -->
+                                    
+                                    <div class="about-text">
+                                        <div class="about-detail">
+                                            <h2>{{ presentation.nom }}</h2>
+                                            <p>{{ presentation.description }}</p>
+                                            <p>Iuvaret detraxit disputando vel ea, ut virtute per.Lorem ipsum dolor si Iuvaret detraxit. disputando velr.Lorem ipsum dolor si. Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, pro an eros perpetua ullamcorper.</p>
+                                        </div><!-- end about-detail -->
+                                    </div><!-- end about-text -->
+                                    
+                                </div><!-- end flex-content -->
+							</div><!-- end columns -->
+                        </div><!-- end row -->
+                    </div><!-- end container -->
+                </div><!-- end about-content -->
+                
+                
+                            
+            </div><!-- end about-us -->
+        </section><!-- end innerpage-wrapper -->
+        
+        
+
+        <!--========================= NEWSLETTER-1 ==========================-->
+        <section id="newsletter-1" class="section-padding back-size newsletter"> 
+            <div class="container">
+                <div class="row">
+                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <h2>Subscribe Our Newsletter</h2>
+                        <p>Subscibe to receive our interesting updates</p>	
+                        <form>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" class="form-control input-lg" placeholder="Enter your email address" required/>
+                                    <span class="input-group-btn"><button class="btn btn-lg"><i class="fa fa-envelope"></i></button></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end newsletter-1 -->
+        
+        
+
+        {% endblock content %}

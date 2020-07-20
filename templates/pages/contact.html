@@ -1,0 +1,342 @@
+{% extends 'bases/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+
+{% block content %}
+
+        
+        
+        <!--================ PAGE-COVER ===============-->
+        <section class="page-cover" id="cover-contact-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                    	<h1 class="page-title">Contact Us</h1>
+                        <ul class="breadcrumb">
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li class="active">Contact Us</li>
+                        </ul>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end page-cover -->
+        
+        
+        <!--===== INNERPAGE-WRAPPER ====-->
+        <!-- block-wrapper-section
+			================================================== -->
+		<section class="block-wrapper outer-background">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+
+						<!-- block content -->
+						<div class="block-content">
+
+							<div class="container-fluid">
+
+								<!-- contact info box -->
+								<div class="contact-info-box">
+									<div class="title-section">
+										<h1><span>Contact Us</span></h1>
+									</div>
+
+									<div id="map"></div>
+
+									<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+
+								</div>
+								<!-- End contact info box -->
+
+								<!-- contact form box -->
+								<div class="contact-form-box">
+									<div class="title-section">
+										<h1><span>Talk to us</span></h1>
+									</div>
+									<form id="contact-form">
+										<div class="row">
+											<div class="col-md-4">
+												<label for="name">Name*</label>
+												<input id="name" name="name" type="text">
+											</div>
+											<div class="col-md-4">
+												<label for="mail">E-mail*</label>
+												<input id="mail" name="mail" type="text">
+											</div>
+											<div class="col-md-4">
+												<label for="website">Website</label>
+												<input id="website" name="website" type="text">
+											</div>
+										</div>
+										<label for="comment">Your Message*</label>
+										<textarea id="comment" name="comment"></textarea>
+										<button type="submit" id="submit-contact">
+											<i class="fa fa-paper-plane"></i> Send Message
+										</button>
+									</form>
+								</div>
+								<!-- End contact form box -->
+
+							</div>
+
+						</div>
+						<!-- End block content -->
+						 <!-- sidebar -->
+						 <div class="sidebar">
+        
+							<div class="widget tab-posts-widget">
+
+								<ul class="nav nav-tabs" id="myTab">
+									<li class="active">
+										<a href="#option1" data-toggle="tab">Popular</a>
+									</li>
+									<li>
+										<a href="#option2" data-toggle="tab">Recent</a>
+									</li>
+									<li>
+										<a href="#option3" data-toggle="tab">Top Reviews</a>
+									</li>
+								</ul>
+
+								<div class="tab-content">
+									<div class="tab-pane active" id="option1">
+										<ul class="list-posts">
+											<li>
+												<img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="tab-pane" id="option2">
+										<ul class="list-posts">
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+											<li>
+												<img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat.</a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+										</ul>										
+									</div>
+									<div class="tab-pane" id="option3">
+										<ul class="list-posts">
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat.</a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+
+											<li>
+												<img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
+												<div class="post-content">
+													<h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
+													<ul class="post-tags">
+														<li><i class="fa fa-clock-o"></i>27 may 2013</li>
+													</ul>
+												</div>
+											</li>
+										</ul>										
+									</div>
+								</div>
+							</div>
+
+							<div class="widget tags-widget">
+
+								<div class="title-section">
+									<h1><span>Popular Tags</span></h1>
+								</div>
+
+								<ul class="tag-list">
+									<li><a href="#">News</a></li>
+									<li><a href="#">Fashion</a></li>
+									<li><a href="#">Politics</a></li>
+									<li><a href="#">Sport</a></li>
+									<li><a href="#">Food</a></li>
+									<li><a href="#">Videos</a></li>
+									<li><a href="#">Business</a></li>
+									<li><a href="#">Travel</a></li>
+									<li><a href="#">World</a></li>
+									<li><a href="#">Music</a></li>
+								</ul>
+
+							</div>
+
+							<div class="advertisement">
+								<div class="desktop-advert">
+									<span>Advertisement</span>
+									<img src="{% static 'upload/addsense/300x250.jpg' %}" alt="">
+								</div>
+								<div class="tablet-advert">
+									<span>Advertisement</span>
+									<img src="{% static 'upload/addsense/200x200.jpg' %}" alt="">
+								</div>
+								<div class="mobile-advert">
+									<span>Advertisement</span>
+									<img src="{% static 'upload/addsense/300x250.jpg' %}" alt="">
+								</div>
+							</div>
+
+						</div>
+						<!-- End sidebar -->	
+					</div>
+
+					
+
+				</div>
+
+			</div>
+
+		</section>
+		<!-- End block-wrapper-section -->
+	<!-- End Container -->
+        
+        
+        <!--========================= NEWSLETTER-1 ==========================-->
+        <section id="newsletter-1" class="section-padding back-size newsletter"> 
+            <div class="container">
+                <div class="row">
+                	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <h2>Subscribe Our Newsletter</h2>
+                        <p>Subscibe to receive our interesting updates</p>	
+                        <form>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" class="form-control input-lg" placeholder="Enter your email address" required/>
+                                    <span class="input-group-btn"><button class="btn btn-lg"><i class="fa fa-envelope"></i></button></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- end columns -->
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end newsletter-1 -->
+        
+        
+        {% endblock content %}   
