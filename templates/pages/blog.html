@@ -92,7 +92,6 @@ Blog
                                             <li><a href="?page={{ articles.next_page_number }}">Next</a></li>
                                             {% endif %}
                                         </ul>
-                                        <p>Page 1 of 9</p>
                                     </div>
                                     <!-- End pagination box -->
 
@@ -127,56 +126,18 @@ Blog
                                         <div class="tab-content">
                                             <div class="tab-pane active" id="option1">
                                                 <ul class="list-posts">
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat. </a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. </a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
+                                                    {% for recent in articles_recent %}
+                                                        <li>
+                                                            <img src="{{ recent.image.url }}" alt="">
+                                                            <div class="post-content">
+                                                                <h2><a href="{% url 'single_blog' recent.id %}">{{ recent.titre|truncatechars:21 }} </a></h2>
+                                                                <ul class="post-tags">
+                                                                    <li><i class="fa fa-clock-o"></i>{{ recent.date_update|date:'F d, Y'|title }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>	
                                             </div>
                                             <div class="tab-pane" id="option2">
                                                 <ul class="list-posts">
@@ -195,56 +156,18 @@ Blog
                                             </div>
                                             <div class="tab-pane" id="option3">
                                                 <ul class="list-posts">
-
+                                                    {% for recent in articles_recent %}
                                                     <li>
-                                                        <img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
+                                                        <img src="{{ recent.image.url }}" alt="">
                                                         <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+                                                            <h2><a href="{% url 'single_blog' recent.id %}">{{ recent.titre|truncatechars:21 }} </a></h2>
                                                             <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                                <li><i class="fa fa-clock-o"></i>{{ recent.date_update|date:'F d, Y'|title }}</li>
                                                             </ul>
                                                         </div>
                                                     </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat.</a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-
-                                                    <li>
-                                                        <img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
-                                                        <div class="post-content">
-                                                            <h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
-                                                            <ul class="post-tags">
-                                                                <li><i class="fa fa-clock-o"></i>27 may 2013</li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
+                                                    {% endfor %}
+                                
                                                 </ul>										
                                             </div>
                                         </div>
@@ -298,11 +221,23 @@ Blog
                 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                         <h2>Subscribe Our Newsletter</h2>
                         <p>Subscibe to receive our interesting updates</p>	
-                        <form>
+                        <form action="{% url 'newsletter' %}" method="POST" class="subscribe_form relative mail_part">
+                            {% csrf_token %}
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="email" class="form-control input-lg" placeholder="Enter your email address" required/>
-                                    <span class="input-group-btn"><button class="btn btn-lg"><i class="fa fa-envelope"></i></button></span>
+                                    <input 
+                                    type="email" 
+                                    class="form-control input-lg"
+                                    id="newsletter-form-email"  
+                                    placeholder="Enter your email address"
+                                    onfocus="this.placeholder=''" 
+                                    onblur="this.placeholder=' Enter your email address '" 
+                                    required/>
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-lg">
+                                            <i class="fa fa-envelope"></i>
+                                        </button>
+                                    </span>
                                 </div>
                             </div>
                         </form>

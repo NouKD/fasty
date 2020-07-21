@@ -46,7 +46,32 @@ Contact
 										<h1><span>Contact Us</span></h1>
 									</div>
 
-									<div id="map"></div>
+									<div id="map" style="height: 480px;"></div>
+										<script>
+											function initMap() {
+												var uluru = { lat: -25.363, lng: 131.044 };
+												var grayStyles = [
+													{
+														featureType: "all",
+														stylers: [
+															{ saturation: -90 },
+															{ lightness: 50 }
+														]
+													},
+													{ elementType: 'labels.text.fill', stylers: [{ color: '#ccdee9' }] }
+												];
+												var map = new google.maps.Map(document.getElementById('map'), {
+													center: { lat: -31.197, lng: 150.744 },
+													zoom: 9,
+													styles: grayStyles,
+													scrollwheel: false
+												});
+											}
+							
+										</script>
+										<script
+											src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+									
 
 									<p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
 
@@ -58,23 +83,25 @@ Contact
 									<div class="title-section">
 										<h1><span>Talk to us</span></h1>
 									</div>
-									<form id="contact-form">
+									<form id="contact-form contact_form" action="{% url 'contact' %}" method="POST"
+									novalidate="novalidate">
+										{% csrf_token %}
 										<div class="row">
 											<div class="col-md-4">
 												<label for="name">Name*</label>
-												<input id="name" name="name" type="text">
+												{{ contact_form.nom }}
 											</div>
 											<div class="col-md-4">
 												<label for="mail">E-mail*</label>
-												<input id="mail" name="mail" type="text">
+												{{ contact_form.email }}
 											</div>
 											<div class="col-md-4">
 												<label for="website">Website</label>
-												<input id="website" name="website" type="text">
+												{{ contact_form.sujet }}
 											</div>
 										</div>
 										<label for="comment">Your Message*</label>
-										<textarea id="comment" name="comment"></textarea>
+										{{ contact_form.message }}
 										<button type="submit" id="submit-contact">
 											<i class="fa fa-paper-plane"></i> Send Message
 										</button>
