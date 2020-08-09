@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('website.urls')),
     path('blog/', include('blog.urls')),
     path('services/', include('services.urls')),
+    path('user/', include('user.urls')),
     #url(r'^api-auth/', include('rest_framework.urls'))
 ]
 

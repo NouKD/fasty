@@ -1,0 +1,36 @@
+{% extends 'bases/base2.html' %}
+
+{% load static %}
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block content %}
+            
+                    <h3>Create an account</h3>
+                    <div class="login-inner-form">
+                        <form action="{% url 'register' %}" method="POST">
+                        {% csrf_token %}
+                            {% for input in form %}
+                                <div class="form-group form-box">
+                                {{ input }}
+                                    <i class="flaticon-user"></i>
+                                </div>
+                            {% endfor %}
+
+                            
+                            <div class="form-group mb-0">
+                                <button type="submit" class="btn-md btn-theme btn-block">Register</button>
+                            </div>
+                            <p class="text">Already a member?<a href="{% url 'login' %}"> Login here</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Login 16 end -->
+
+{% endblock content %}

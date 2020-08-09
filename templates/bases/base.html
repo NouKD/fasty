@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <link rel="stylesheet" id="cpswitch" href="{% static 'css/blue-violet.css' %}">
 
+	{% block vueCdn %}
+
+    {% endblock %}
 
 
 </head>
@@ -78,9 +81,9 @@
 										<span class="cel-temperature">+7</span>
 									</li>
 									<li><span class="time-now">Thursday 8 January 2015 / 21:20</span></li>
-									<li><a href="#">Log In</a></li>
+									<li><a href="{% url 'login' %}">Log In</a></li>
 									<li><a href="{% url 'contact' %}">Contact</a></li>
-									<li><a href="#">Register</a></li>
+									<li><a href="{% url 'register' %}">Register</a></li>
 								</ul>
 							</div>	
 							<div class="col-md-3">
@@ -179,8 +182,8 @@
                             <ul class="list-unstyled">
                                 <li><a href="{% url 'blog' %}">Blogs</a></li>
                                 <li><a href="{% url 'contact' %}">Contact Us</a></li>
-                                <li><a href="#">Login</a></li>
-                                <li><a href="#">Register</a></li>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'register' %}">Register</a></li>
                                 <li><a href="{% url 'contact' %}">Site Map</a></li>
                             </ul>
                         </div><!-- end columns -->
@@ -246,5 +249,9 @@
 	<script src="{% static 'js/custom-video.js' %}"></script>
     
  <!-- Page Scripts Ends -->
+
+{% block vue %}
+
+{% endblock %}
 </body>
 </html>

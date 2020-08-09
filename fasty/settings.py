@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'website.apps.WebsiteConfig',
     'services.apps.ServicesConfig',
+    'user.apps.UserConfig',
     'rest_framework',
 ]
 

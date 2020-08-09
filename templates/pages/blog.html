@@ -6,6 +6,13 @@
 Blog
 {% endblock title %}
 
+
+{% block vueCdn %}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+{% endblock %}
+
+
 {% block content%}
 
 <!--============= PAGE-COVER =============-->
@@ -45,14 +52,13 @@ Blog
 
                                         <div class="latest-articles iso-call">
 
-                                            {% for article  in articles %}
-
-                                            <div class="{% cycle 'news-post standard-post2 default-size' 'news-post standard-post2' 'news-post standard-post2' 'news-post standard-post2' 'news-post standard-post2' 'news-post standard-post2' %}">
+                                            <div id="app">
+                                            <div class="news-post standard-post2 default-size" v-for="article in articles" :key="article.id">
                                                 <div class="post-gallery">
-                                                    <a href="{% url 'single_blog' article.id %}"><img src="{{ article.image.url }}" alt=""></a>
+                                                    <a href="{#{% url 'single_blog' article.id %}#}"><img v-bind:src="article.image" alt=""></a>
                                                 </div>
                                                 <div class="post-title">
-                                                    <h2><a href="{% url 'single_blog' article.id %}">{{ articles.titre }} </a></h2>
+                                                    <h2><a href="{% comment %}{% url 'single_blog' article.id %}{% endcomment %}">${ articles.titre } </a></h2>
                                                     <ul class="post-tags">
                                                         <li><i class="fa fa-clock-o"></i>27 may 2013</li>
                                                         <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
@@ -60,8 +66,7 @@ Blog
                                                     </ul>
                                                 </div>
                                             </div>
-
-                                            {%endfor%}
+                                            </div>
 
                                         </div>
 
@@ -247,3 +252,25 @@ Blog
         </section><!-- end newsletter-1 -->
         
 {% endblock content%}
+
+{% block vue %}
+<script>
+app=new Vue({
+    el:"#app",
+    data: {
+        articles:[],
+        base_url: window.location.protocol + "//" + window.location.host
+    },
+    delimiters : ["${ ", " }"],
+    mounted(){
+      this.getArticles()
+    },
+    methods: {
+        getArticles: function (){
+            axios.get(this.base_url + "/blog/api/articles/")
+            .then(response =>(this.articles = response.data))
+        },
+    }
+})
+</script>
+{% endblock%}

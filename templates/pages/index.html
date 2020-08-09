@@ -6,6 +6,10 @@
 Home
 {% endblock title %}
 
+{% block vueCdn %}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+{% endblock %}
+
 {% block content%}
 
 <!-- main-news-slider
@@ -128,7 +132,6 @@ Home
                             
         
                             <!-- blog-content-item -->
-
                             <div class="col-sm-8">    
                                 <!-- block content -->
                                 <div class="block-content">
@@ -423,3 +426,41 @@ Home
         </div>
         <!-- End Container -->
         {% endblock content%}
+
+{% block vue %}
+<script>
+app=new Vue({
+    el:"#app",
+    data: {
+        gallerie:[],
+        acceille:[],
+        fashion:[],
+        base_url: window.location.protocol + "//" + window.location.host
+    },
+    delimiters : ["${ ", " }"],
+    mounted(){
+      this.getGalleries()
+      this.getAcceilles()
+      this.getFashion()
+
+
+    },
+    methods: {
+        getGalleries: function (){
+            axios.get(this.base_url + "/website/api/gallerie/")
+            .then(response =>(this.gallerie = response.data))
+        },
+
+        getAcceilles: function (){
+            axios.get(this.base_url + "/website/api/acceille/")
+            .then(response =>(this.acceille = response.data))
+        },
+
+        getFashion: function (){
+            axios.get(this.base_url + "/website/api/fashion/")
+            .then(response =>(this.fashion = response.data))
+        },
+    }
+})
+</script>
+{% endblock %} 
